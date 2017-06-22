@@ -49,7 +49,7 @@ object TestObject extends App {
     //int array all multiply 2
     val ageMult2 = for (myage <- ages) yield 2 * myage
     ageMult2.foreach(println)
-    
+
     //find values divided to 4
     val ageDiv4 = for (myage <- ages if myage % 4 == 0) yield myage
     ageDiv4.foreach(println)
