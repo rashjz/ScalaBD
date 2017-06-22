@@ -6,7 +6,7 @@ import scala.math._;
 /**
   * Rashad Javadov
   */
-object TestObject extends App {
+object StringTestObject extends App {
 
   print("Salam Resad ");
   val t1 = sqrt(16) + 2
@@ -39,19 +39,9 @@ object TestObject extends App {
     for (emp <- employees)
       print("\n Employee : " + emp)
 
-    //playing with  array of int
-    val ages = new Array[Int](9)
-    for (j <- 0 to (ages.length - 1)) {
-      ages(j) = j
-      print("\n age is " + ages(j))
-    }
+    //define multi type variable
+    var specialRow = (1, "Rashad Javadov", 12.222)
+    printf("\n %s has to pay $ %.2f \n", specialRow._2, specialRow._3)
 
-    //int array all multiply 2
-    val ageMult2 = for (myage <- ages) yield 2 * myage
-    ageMult2.foreach(println)
-
-    //find values divided to 4
-    val ageDiv4 = for (myage <- ages if myage % 4 == 0) yield myage
-    ageDiv4.foreach(println)
   }
 }
