@@ -1,7 +1,7 @@
 package mypck
 
 /**
-  * Created by rasha_000 on 6/23/2017.
+  * Created by Rashad Javadov on 6/23/2017.
   */
 class Animal() {
   var id: Int = 0

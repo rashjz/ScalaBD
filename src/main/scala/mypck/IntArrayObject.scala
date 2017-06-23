@@ -1,7 +1,7 @@
 package mypck
 
 /**
-  * Created by doc on 6/22/17.
+  * Created by Rashad Javadov on 6/22/17.
   */
 object IntArrayObject {
 
