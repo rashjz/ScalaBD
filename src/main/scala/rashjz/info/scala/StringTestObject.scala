@@ -1,4 +1,4 @@
-package mypck
+package rashjz.info.scala
 
 import scala.collection.mutable.ArrayBuffer
 import scala.math._;

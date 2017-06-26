@@ -1,4 +1,4 @@
-package mypck
+package rashjz.info.scala
 
 import java.io.{File, PrintWriter}
 

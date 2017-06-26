@@ -1,4 +1,4 @@
-package mypck
+package rashjz.info.scala
 
 /**
   * Created by rasha_000 on 6/25/2017.

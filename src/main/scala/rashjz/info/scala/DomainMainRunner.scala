@@ -1,7 +1,7 @@
 /**
   * Created by Rashad Javadov on 6/23/2017.
   */
-package mypck
+package rashjz.info.scala
 
 object DomainMainRunner {
 
