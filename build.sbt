@@ -1,4 +1,4 @@
-name := "scalaPro"
+name := "ScalaBD"
 
 version := "1.0"
 
