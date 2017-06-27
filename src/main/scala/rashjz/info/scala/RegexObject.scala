@@ -1,7 +1,7 @@
 package rashjz.info.scala
 
 /**
-  * Created by rasha_000 on 6/25/2017.
+  * Created by Rashad Javadov on 6/25/2017.
   */
 object RegexObject {
   def main(args: Array[String]) {
