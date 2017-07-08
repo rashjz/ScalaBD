@@ -11,5 +11,6 @@ libraryDependencies ++= Seq(
   "com.novocode" % "junit-interface" % "0.11",
   "org.scala-lang" % "scala-library" % scalaVersion.value,
   "org.scala-lang.modules" % "scala-async_2.11" % "0.9.6",
-  "org.apache.spark" %% "spark-core" % "2.0.2"
+  "org.apache.spark" %% "spark-core" % "2.0.2",
+  "net.sf.opencsv" % "opencsv" % "2.3"
 )
