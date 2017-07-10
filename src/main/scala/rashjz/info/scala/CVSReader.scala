@@ -17,6 +17,7 @@ object CVSReader {
     val sc = new SparkContext(conf)
     val path = "C:\\Users\\rasha_000\\Desktop\\ScalaBD\\src\\main\\resources\\file.csv"
     val inputFile = sc.wholeTextFiles(path)
+
     /*
     //reading from csv file
     val content = Source.fromFile(path).getLines.map(_.split(";"))
