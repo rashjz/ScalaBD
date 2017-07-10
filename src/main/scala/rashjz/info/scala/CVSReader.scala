@@ -1,7 +1,7 @@
 package rashjz.info.scala
 
 import java.io.StringReader
-
+//import org.apache.spark.sql.hive.HiveContext
 import au.com.bytecode.opencsv.CSVReader
 import org.apache.spark.{SparkConf, SparkContext}
 
@@ -13,19 +13,43 @@ import scala.io.Source
 object CVSReader {
   def main(args: Array[String]): Unit = {
 
-    val conf = new SparkConf() //define spark configuration
-      .setMaster("local") //set spark master as local
-      .setAppName("ScalaBD") //app name
-      .set("spark.executor.memory", "2g") //setting executor memory size
+    val conf = new SparkConf().setAppName("App1").setMaster("local")
     val sc = new SparkContext(conf)
-
-    //    val input = sc.wholeTextFiles("file://home/holden/salesFiles")
-    //    val result = input.mapValues{y =>  val nums = y.split(" ").map(x => x.toDouble)  nums.sum / nums.size.toDouble }
-    //    val input = sc.textFile(inputFile)
-    //    val result = input.map{ line =>  val reader = new CSVReader(new StringReader(line));  reader.readNext(); }
-
-    val content = Source.fromFile("C:\\Users\\rasha_000\\Desktop\\ScalaBD\\src\\main\\resources\\file.csv").getLines.map(_.split(";"))
+    val path = "C:\\Users\\rasha_000\\Desktop\\ScalaBD\\src\\main\\resources\\file.csv"
+    val inputFile = sc.wholeTextFiles(path)
+    /*
+    //reading from csv file
+    val content = Source.fromFile(path).getLines.map(_.split(";"))
     content.foreach(print)
+    */
+    val data = sc.parallelize(List(("Panda", 3), ("Kay", 6), ("Snail", 2), ("Snail", 7)))
+
+    val linecounter = sc.accumulator(0) // Create an Accumulator[Int] initialized to 0
+    data.foreach(line => linecounter += 1)
+
+    print("Counted Lines is  " + linecounter)
+
+    val snailCounters = sc.accumulator(0)
+    data.foreach(line => if (line._1.equals("Snail")) {
+      snailCounters += 1
+    })
+    print("Snails Counted Lines is  " + snailCounters)
+
+    //    val callSigns = data.map(line => {
+    //      print(line+"xxxxxssssss")
+    //      if (line._1 == "Snail") {    blankLines += 1 }
+    //      //line.split(" ")
+    //    })
+
+
+    //    data.saveAsSequenceFile("C:\\Users\\rasha_000\\Desktop\\ScalaBD\\src\\main\\resources\\f1")
+
+    //sql spark
+    /*
+    val hiveCtx = new org.apache.spark.sql.hive.HiveContext(sc)
+    val rows = hiveCtx.sql("SELECT name, age FROM users")
+    val firstRow = rows.first() println (firstRow.getString(0)) // Field 0 is the name
+    */
 
 
   }

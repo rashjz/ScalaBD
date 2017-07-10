@@ -13,4 +13,5 @@ libraryDependencies ++= Seq(
   "org.scala-lang.modules" % "scala-async_2.11" % "0.9.6",
   "org.apache.spark" %% "spark-core" % "2.0.2",
   "net.sf.opencsv" % "opencsv" % "2.3"
+
 )
