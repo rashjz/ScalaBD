@@ -35,11 +35,15 @@ object CVSReader {
     })
     print("Snails Counted Lines is  " + snailCounters)
 
-    //    val callSigns = data.map(line => {
-    //      print(line+"xxxxxssssss")
-    //      if (line._1 == "Snail") {    blankLines += 1 }
-    //      //line.split(" ")
-    //    })
+
+    val csv = sc.textFile(path)
+    val csvdata = csv.map(li => li.split(";").map(elem => elem.trim)) //lines in rows
+
+    val broadcastVar = sc.broadcast(csvdata.collect())
+
+    print(broadcastVar.value.foreach(line => line.foreach(l => print(l+"| ")) ))
+
+
 
 
     //    data.saveAsSequenceFile("C:\\Users\\rasha_000\\Desktop\\ScalaBD\\src\\main\\resources\\f1")
